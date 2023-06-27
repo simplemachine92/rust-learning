@@ -5,7 +5,7 @@ https://doc.rust-lang.org/book/ch03-05-control-flow.html#:~:text=nicer%2C%20isn%
 
 // xn = xn−1 + xn−2, or the Combinational Method
 fn bizonacci(nth: i32) -> Vec<i32> {
-    let mut seed = vec![0,1]; 
+    let mut seed = vec![0,1];
     for _number in 0..nth - 1 {
         let combined = seed[seed.len() - 1] + seed[seed.len() - 2];
         seed.push(combined);

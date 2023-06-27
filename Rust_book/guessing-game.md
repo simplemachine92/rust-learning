@@ -41,3 +41,35 @@ add rand to our dependencies in cargo.toml
 [dependencies]
 rand = "0.8.5"
 ```
+
+a cargo.lock file is generated to ensure simple rebuilding, but you can run this command to push dependencies forward
+
+```
+cargo update
+```
+
+Our program looks like this when we include our RNG
+The range is inclusive, so 1-100.
+
+```
+use std::io;
+use rand::Rng;
+
+fn main() {
+    println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+
+    println!("The secret number is: {secret_number}");
+
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+
+    println!("You guessed: {guess}");
+}
+```
