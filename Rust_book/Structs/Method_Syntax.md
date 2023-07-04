@@ -81,3 +81,5 @@ To call associated functions we use the :: syntax with the Struct name, like so.
 ```
 let sq = Rectangle::square(3);
 ```
+
+You can have multiple implementation blocks for each Struct, which will be elaborated upon in Chapter 10, generic types and traits.
